@@ -31,6 +31,7 @@ logger = ActiveSupport::Logger.new(ENV["VERBOSE"] ? STDERR : nil)
 
 Combustion.path = "test/internal"
 Combustion.initialize! :active_record, :action_controller do
+  config.load_defaults Rails::VERSION::STRING.to_f
   config.action_controller.logger = logger
   config.active_record.logger = logger
 end
@@ -72,3 +73,4 @@ users =
   end
 User.insert_all!(users)
 ActiveRecord::Base.connection.execute("ANALYZE users")
+ActiveRecord::Base.connection.execute("CREATE MATERIALIZED VIEW all_users AS SELECT * FROM users")

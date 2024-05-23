@@ -1,3 +1,14 @@
+## 3.5.0 (2024-05-21)
+
+- Added materialized views to space page and `relation_sizes` method
+- Added Linux package for Debian 12
+- Fixed error with `slow_queries` method
+
+## 3.4.1 (2024-02-07)
+
+- Added current stats to query details page
+- Improved tune page for latest PgTune
+
 ## 3.4.0 (2023-11-28)
 
 - Added support for explaining normalized queries with Postgres 16
